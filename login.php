@@ -12,7 +12,10 @@ $requete = "SELECT * FROM utilisateur WHERE username = '$username' AND password 
 $resultat = $pdo->query($requete);
 
 if ($resultat->rowCount()>0){
+    session_start();
+    $_SESSION["id"] = $resultat["id"];
+    $_SESSION["username"] = $username;
     echo "Commande reussie";
 } else {
-    echo "marche pas"
+    echo "marche pas";
 }
