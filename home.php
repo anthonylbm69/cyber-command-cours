@@ -1,8 +1,9 @@
 <?php
 session_start();
 
-if (isset($_SESSION['id'], $_SESSION['username'])){
-    header("Location: login.php");
+// Vérifie si l'utilisateur est connecté
+if (!isset($_SESSION['id'], $_SESSION['username'])) {
+    header("Location: login.php"); // Redirige vers la page de connexion
     exit();
 }
 ?>
@@ -11,12 +12,14 @@ if (isset($_SESSION['id'], $_SESSION['username'])){
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Connexion</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenue</title>
 </head>
 <body>
-<h1>Connexion</h1>
-<h2>Bienvenue <?php echo htmlspecialchars($_SESSION['username']) ?></h2>
-<p>vous etes co</p>
-<p>déco</p>
+<div class="container">
+    <h2>Bienvenue, <?php echo htmlspecialchars($_SESSION['username']); ?> !</h2>
+    <p>Vous êtes connecté.</p>
+    <a href="">Déconnexion</a>
+</div>
 </body>
 </html>
