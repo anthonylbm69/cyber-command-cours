@@ -30,6 +30,6 @@ if (!isset($_SESSION['id'], $_SESSION['username'])) {
 
 <?php
 if (isset($_POST['email'])) {
-    $email = $_POST['email'];
+    $email = htmlspecialchars($_POST['email']);
     echo "Votre email est " . $email;
 }
