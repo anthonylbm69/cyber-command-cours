@@ -19,7 +19,7 @@ if (!isset($_SESSION['id'], $_SESSION['username'])) {
 <div class="container">
     <h2>Bienvenue, <?php echo htmlspecialchars($_SESSION['username']); ?> !</h2>
     <p>Vous êtes connecté.</p>
-    <a href="">Déconnexion</a>
+    <a href="logout.php">Déconnexion</a>
 </div>
 </body>
 </html>
